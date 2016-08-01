@@ -1,9 +1,17 @@
-language: ruby
-
-sudo: required
+language: python
+python:
+    - 2.7
+    - 3.2
+    - 3.5
 
 services:
     - docker
+
+install:
+    - docker run dflima/whale
+
+script:
+    - docker ps -a | grep dflima/docker-whale
 
 after_success:
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
