@@ -5,7 +5,7 @@ services:
 
 before_install:
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker build dflima/docker-whale .
+    - docker build -t dflima/docker-whale .
     - docker ps -a
     - docker run dflima/docker-whale
 
